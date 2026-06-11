@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Clínica de Estética</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- CABEÇALHO -->
+        <header class="header">
+            <h1>💅 Agenda Clínica de Estética</h1>
+            <p>Sistema compartilhado para profissionais</p>
+        </header>
+
+        <!-- ABAS DE NAVEGAÇÃO -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="profissionais">Profissionais</button>
+            <button class="tab-btn" data-tab="agendamentos">Agendamentos</button>
+            <button class="tab-btn" data-tab="calendario">Calendário</button>
+        </nav>
+
+        <!-- ABA 1: GERENCIAR PROFISSIONAIS -->
+        <section id="profissionais" class="tab-content active">
+            <div class="card">
+                <h2>👥 Adicionar Profissional</h2>
+                <div class="form-group">
+                    <input type="text" id="nomeProfissional" placeholder="Nome do profissional">
+                    <input type="text" id="especialidade" placeholder="Especialidade (ex: Manicure, Depilação)">
+                    <input type="color" id="corProfissional" value="#FF69B4" title="Cor para identificar">
+                    <button onclick="adicionarProfissional()" class="btn btn-primary">➕ Adicionar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📋 Profissionais Cadastrados</h2>
+                <div id="listaProfissionais" class="lista">
+                    <!-- Profissionais aparecerão aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 2: CRIAR AGENDAMENTOS -->
+        <section id="agendamentos" class="tab-content">
+            <div class="card">
+                <h2>📅 Novo Agendamento</h2>
+                <div class="form-group">
+                    <select id="selectProfissional">
+                        <option value="">Selecione o profissional</option>
+                    </select>
+                    
+                    <input type="text" id="nomeCliente" placeholder="Nome do cliente">
+                    
+                    <input type="text" id="telefoneCliente" placeholder="Telefone do cliente">
+                    
+                    <select id="tipoServico">
+                        <option value="">Selecione o serviço</option>
+                        <option value="Manicure">Manicure</option>
+                        <option value="Pedicure">Pedicure</option>
+                        <option value="Depilação">Depilação</option>
+                        <option value="Massagem">Massagem</option>
+                        <option value="Limpeza de pele">Limpeza de pele</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    
+                    <input type="date" id="dataAgendamento">
+                    
+                    <input type="time" id="horaAgendamento">
+                    
+                    <input type="number" id="duracao" placeholder="Duração (minutos)" value="60">
+                    
+                    <button onclick="criarAgendamento()" class="btn btn-primary">✅ Agendar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📋 Todos os Agendamentos</h2>
+                <div id="listaAgendamentos" class="lista">
+                    <!-- Agendamentos aparecerão aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 3: VISUALIZAR CALENDÁRIO -->
+        <section id="calendario" class="tab-content">
+            <div class="card">
+                <h2>📆 Calendário de Agenda</h2>
+                
+                <div class="filtro-calendario">
+                    <input type="date" id="dataFiltro">
+                    <select id="profissionalFiltro">
+                        <option value="">Todos os profissionais</option>
+                    </select>
+                </div>
+
+                <div id="calendarioView" class="calendario">
+                    <!-- Calendário aparecerá aqui -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
