@@ -37,22 +37,22 @@ body {
 .header {
     background: linear-gradient(135deg, #7a8b82 0%, #6b7c73 100%);
     color: #f5f2ed;
-    padding: 50px 20px;
+    padding: 50px 20px 40px;
     text-align: center;
     position: relative;
 }
 
-.header::before {
-    content: "KB";
-    position: absolute;
-    top: 15px;
-    left: 30px;
-    font-size: 2.5em;
-    color: #b89c6d;
-    font-family: Georgia, serif;
-    font-weight: 300;
-    letter-spacing: 2px;
-    opacity: 0.8;
+.logo-container {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .header h1 {
@@ -392,12 +392,13 @@ input[type="time"] {
    ========================================== */
 
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2em;
+    .logo {
+        width: 90px;
+        height: 90px;
     }
 
-    .header::before {
-        font-size: 1.8em;
+    .header h1 {
+        font-size: 2em;
     }
 
     .form-group {
